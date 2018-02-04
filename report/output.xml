@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.0.2 (Python 3.6.3 on darwin)" generated="20180203 17:51:50.935">
+<suite id="s1" name="TestHTASite" source="/Users/tviriya/Documents/tviriya/repository/docker-gitlab/rbfw-web-example/test/TestHTASite.robot">
+<kw name="Suite Setup" type="setup">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Sute Setup</arg>
+</arguments>
+<status status="PASS" starttime="20180203 17:51:51.053" endtime="20180203 17:51:51.053"></status>
+</kw>
+<kw name="Open Chrome Browser If Not Opened" library="configuration">
+<arguments>
+<arg>${URL}</arg>
+</arguments>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<arguments>
+<arg>Get Window Identifiers</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+<var>${return}</var>
+</assign>
+<kw name="Get Window Identifiers" library="Selenium2Library">
+<doc>Returns and logs id attributes of all known browser windows.</doc>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20180203 17:51:51.054" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<status status="PASS" starttime="20180203 17:51:51.054" endtime="20180203 17:51:51.054"></status>
+</kw>
+<msg timestamp="20180203 17:51:51.055" level="FAIL">No browser is open.</msg>
+<status status="FAIL" starttime="20180203 17:51:51.054" endtime="20180203 17:51:51.055"></status>
+</kw>
+<msg timestamp="20180203 17:51:51.055" level="INFO">${status} = FAIL</msg>
+<msg timestamp="20180203 17:51:51.055" level="INFO">${return} = No browser is open.</msg>
+<status status="PASS" starttime="20180203 17:51:51.054" endtime="20180203 17:51:51.055"></status>
+</kw>
+<kw name="Return From Keyword If" library="BuiltIn">
+<doc>Returns from the enclosing user keyword if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}'=='PASS'</arg>
+</arguments>
+<status status="PASS" starttime="20180203 17:51:51.055" endtime="20180203 17:51:51.055"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+</arguments>
+<assign>
+<var>${options}</var>
+</assign>
+<msg timestamp="20180203 17:51:51.056" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x10220a390&gt;</msg>
+<status status="PASS" starttime="20180203 17:51:51.056" endtime="20180203 17:51:51.056"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>sys.platform.startswith('win')</arg>
+<arg>Create Webdriver</arg>
+<arg>Chrome</arg>
+<arg>executable_path=/Users/tviriya/Documents/tviriya/repository/docker-gitlab/rbfw-web-example/resources${/}${CHROMEDRIVERPATH} chrome_options=${options}</arg>
+<arg>ELSE</arg>
+<arg>Create Webdriver</arg>
+<arg>Chrome</arg>
+<arg>executable_path=/Users/tviriya/Documents/tviriya/repository/docker-gitlab/rbfw-web-example/resources${/}${MAC_CHROMEDRIVERPATH}</arg>
+<arg>chrome_options=${options}</arg>
+</arguments>
+<assign>
+<var>${chromedriver}</var>
+</assign>
+<kw name="Create Webdriver" library="Selenium2Library">
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<arguments>
+<arg>Chrome</arg>
+<arg>executable_path=/Users/tviriya/Documents/tviriya/repository/docker-gitlab/rbfw-web-example/resources${/}${MAC_CHROMEDRIVERPATH}</arg>
+<arg>chrome_options=${options}</arg>
+</arguments>
+<msg timestamp="20180203 17:51:51.056" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20180203 17:51:51.056" endtime="20180203 17:51:52.435"></status>
+</kw>
+<msg timestamp="20180203 17:51:52.436" level="INFO">${chromedriver} = 1</msg>
+<status status="PASS" starttime="20180203 17:51:51.056" endtime="20180203 17:51:52.436"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>URL=${url}</arg>
+</arguments>
+<msg timestamp="20180203 17:51:52.436" level="INFO">URL=http://www.howtoautomate.in.th</msg>
+<status status="PASS" starttime="20180203 17:51:52.436" endtime="20180203 17:51:52.436"></status>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20180203 17:51:52.437" level="INFO">Opening url 'http://www.howtoautomate.in.th'</msg>
+<status status="PASS" starttime="20180203 17:51:52.436" endtime="20180203 17:51:53.628"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20180203 17:51:53.629" endtime="20180203 17:51:53.787"></status>
+</kw>
+<status status="PASS" starttime="20180203 17:51:51.053" endtime="20180203 17:51:53.787"></status>
+</kw>
+<status status="PASS" starttime="20180203 17:51:51.053" endtime="20180203 17:51:53.788"></status>
+</kw>
+<test id="s1-t1" name="Latest Aritcle Should have 5 items">
+<kw name="Test Setup" type="setup">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Test Setup</arg>
+</arguments>
+<status status="PASS" starttime="20180203 17:51:53.790" endtime="20180203 17:51:53.790"></status>
+</kw>
+<status status="PASS" starttime="20180203 17:51:53.790" endtime="20180203 17:51:53.791"></status>
+</kw>
+<kw name="Verify Page Display" library="HTA">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>&amp;{General}[logo]</arg>
+<arg>${timeout}</arg>
+</arguments>
+<status status="PASS" starttime="20180203 17:51:53.791" endtime="20180203 17:51:53.814"></status>
+</kw>
+<status status="PASS" starttime="20180203 17:51:53.791" endtime="20180203 17:51:53.814"></status>
+</kw>
+<kw name="Verify Latest Article Display" library="HTA">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>&amp;{LatestSection}[section_title]</arg>
+<arg>${timeout}</arg>
+</arguments>
+<status status="PASS" starttime="20180203 17:51:53.815" endtime="20180203 17:51:53.836"></status>
+</kw>
+<status status="PASS" starttime="20180203 17:51:53.815" endtime="20180203 17:51:53.836"></status>
+</kw>
+<kw name="Article List Should Equal To" library="HTA">
+<arguments>
+<arg>${5}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>&amp;{LatestSection}[article_list]</arg>
+<arg>${timeout}</arg>
+</arguments>
+<status status="PASS" starttime="20180203 17:51:53.837" endtime="20180203 17:51:53.857"></status>
+</kw>
+<kw name="Get WebElements" library="Selenium2Library">
+<doc>Returns list of WebElement objects matching the ``locator``.</doc>
+<arguments>
+<arg>&amp;{LatestSection}[article_list]</arg>
+</arguments>
+<assign>
+<var>${articles}</var>
+</assign>
+<msg timestamp="20180203 17:51:53.863" level="INFO">${articles} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="3f0fc2a1ad34e730579d8e1bc35a16fe", element="0.0987967573905566-3")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3f0fc2a1ad34...</msg>
+<status status="PASS" starttime="20180203 17:51:53.857" endtime="20180203 17:51:53.863"></status>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${articles}</arg>
+</arguments>
+<assign>
+<var>${list_size}</var>
+</assign>
+<msg timestamp="20180203 17:51:53.863" level="INFO">Length is 5</msg>
+<msg timestamp="20180203 17:51:53.863" level="INFO">${list_size} = 5</msg>
+<status status="PASS" starttime="20180203 17:51:53.863" endtime="20180203 17:51:53.863"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${size}</arg>
+<arg>${list_size}</arg>
+</arguments>
+<status status="PASS" starttime="20180203 17:51:53.863" endtime="20180203 17:51:53.864"></status>
+</kw>
+<status status="PASS" starttime="20180203 17:51:53.836" endtime="20180203 17:51:53.864"></status>
+</kw>
+<kw name="Test Teardown" type="teardown">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Test Teardown</arg>
+</arguments>
+<status status="PASS" starttime="20180203 17:51:53.864" endtime="20180203 17:51:53.864"></status>
+</kw>
+<status status="PASS" starttime="20180203 17:51:53.864" endtime="20180203 17:51:53.865"></status>
+</kw>
+<status status="PASS" starttime="20180203 17:51:53.788" endtime="20180203 17:51:53.865" critical="yes"></status>
+</test>
+<kw name="Close All Browsers" library="Selenium2Library" type="teardown">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20180203 17:51:53.865" endtime="20180203 17:51:53.928"></status>
+</kw>
+<status status="PASS" starttime="20180203 17:51:50.938" endtime="20180203 17:51:53.928"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="TestHTASite">TestHTASite</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
