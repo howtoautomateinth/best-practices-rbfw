@@ -5,7 +5,7 @@ Test Setup  Test Setup
 Test Teardown   Test Teardown
 Resource    ../resources/keywords/common.robot
 Resource    ../resources/keywords/HTA.robot
-Resource    ../resources/configuration.robot
+Resource    ../resources/configuration_web.robot
 
 *** Test Cases ***
 Latest Aritcle Should have 5 items
