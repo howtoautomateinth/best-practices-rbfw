@@ -1,6 +1,7 @@
 *** Settings ***
 Library     AppiumLibrary
 Resource    ../configuration_device.robot
+Resource  	../android_element_map.robot
 
 *** Variables ***
 ${APPIUM_SERVER_URL}   http://localhost:4723/wd/hub
@@ -9,6 +10,15 @@ ${GLOBALAPPIUMTIMEOUT}  ${60}
 ${ANDROID_DEVICE}	&{Nexus5X}
 
 *** Keywords ***
+Verify that HTA Title Is Display
+ 	AppiumLibrary.Wait Until Element Is Visible	&{AndroidGeneral}[hta_tittle]
+ 	AppiumLibrary.Element Text Should Be	&{AndroidGeneral}[hta_tittle]	Howtoautomate.in.th
+
+ Input Box Should Able To Edit
+ 	AppiumLibrary.Wait Until Element Is Visible	&{AndroidGeneral}[hta_editbox]
+ 	AppiumLibrary.Input Text 	&{AndroidGeneral}[hta_editbox] 	Testing
+ 	AppiumLibrary.Element Text Should Be	&{AndroidGeneral}[hta_editbox]	Testing
+
 Initial Application
     Set Appium Timeout  ${GLOBALAPPIUMTIMEOUT}s
     Set Global Variable     ${GLOBALTIMEOUT}    ${GLOBALAPPIUMTIMEOUT}

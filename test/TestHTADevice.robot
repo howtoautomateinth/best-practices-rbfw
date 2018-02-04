@@ -6,8 +6,9 @@ Test Teardown   Test Teardown
 Resource    ../resources/keywords/HTADevices.robot
 
 *** Test Case ***
-Log for testing
-    Log To Console  Log test
+HTA Tittle Should Display
+ 	Verify that HTA Title Is Display
+ 	Input Box Should Able To Edit
 
 *** Keywords ***
 Suite Setup
