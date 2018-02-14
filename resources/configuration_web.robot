@@ -3,6 +3,8 @@ ${CHROMEDRIVERPATH}     tools/chromedriver.exe
 ${MAC_CHROMEDRIVERPATH}     tools/chromedriver
 
 *** Keywords ***
+
+#deprecated to use selenium grid instead
 Open Chrome Browser If Not Opened
     [Arguments]     ${url}
     ${status}   ${return}   Run Keyword And Ignore Error    Get Window Identifiers

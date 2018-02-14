@@ -7,6 +7,12 @@ Resource    ../resources/keywords/common.robot
 Resource    ../resources/keywords/HTA.robot
 Resource    ../resources/configuration_web.robot
 
+*** Variables ***
+${GLOBALTIMEOUT}    ${30}
+${URL}  http://www.howtoautomate.in.th
+${REMOTE_URL}  http://localhost:4444/wd/hub
+${BROWSERS}     chrome
+
 *** Test Cases ***
 Latest Aritcle Should have 5 items
     Verify Page Display
@@ -16,7 +22,7 @@ Latest Aritcle Should have 5 items
 *** Keywords ***
 Suite Setup
     Log To Console  Sute Setup
-    Open Chrome Browser If Not Opened   ${URL}
+    Open Browser   ${URL}   ${BROWSERS}     None    ${REMOTE_URL}
 
 Test Setup
     Log To Console  Test Setup

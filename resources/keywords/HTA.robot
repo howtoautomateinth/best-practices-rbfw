@@ -3,7 +3,6 @@ Resource    ../HTAWebElementsMap.robot
 
 *** Variables ***
 ${GLOBALTIMEOUT}    ${30}
-${URL}  http://www.howtoautomate.in.th
 
 *** Keywords ***
 Article List Should Equal To
